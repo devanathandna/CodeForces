@@ -5,31 +5,15 @@ int main(){
 	int t;
 	cin >> t;
 	while(t--){
-		int n;
+		long long n;
 		cin >> n;
-		vector<int>arr(n);
+		vector<long long>arr(n);
 		for(int i=0;i<n;i++){
 			cin >> arr[i];
 		}
-		bool flag = false;
-		int prev = INT_MIN;
-
 		for(int i=0;i<n;i++){
-			if(arr[i]+(i+1) <= prev){
-				flag = true;
-				break;
-			}
-			else{
-				prev = arr[i]+i+1;
-			}
+			cout << n + 1 - arr[i] << " ";
 		}
-		if(flag){
-			sort(arr.begin(),arr.end());
-		}
-		for(int i=0;i<n;i++){
-			cout << arr[i] << " ";
-		}
-		cout << endl;
 	}
 	return 0;
 }
